@@ -1,0 +1,37 @@
+/* 边框
+[bor-base] {
+  border: 1px solid #E5E5E5;
+}
+-------------------------- */
+[bor-base] {
+  border: $border-base;
+}
+
+/* 圆角大小
+[radius1] {
+  border-radius: 1px;
+}
+
+[radius2] {
+  border-radius: 2px;
+}
+
+[radius10] {
+  border-radius: 10px;
+}
+...
+
+[circle] {
+  border-radius: 50%;
+}
+-------------------------- */
+@for $i from 1 through 10 {
+  [radius#{$i}] { 
+    border-radius: #{$i}Px;
+    overflow: hidden;
+  }
+}
+
+[circle] {
+  border-radius: 50%;
+}

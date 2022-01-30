@@ -1,0 +1,94 @@
+/* 边距大小
+[ml(1/2/3/.../30)] {
+  margin-left: (1/2/3/...30)px;
+}
+
+[mr(1/2/3/.../30)] {
+  margin-right: (1/2/3/...30)px;
+}
+
+[mt(1/2/3/.../30)] {
+  margin-top: (1/2/3/...30)px;
+}
+
+[mb(1/2/3/.../30)] {
+  margin-bottom: (1/2/3/...30)px;
+}
+
+[pl(1/2/3/.../30)] {
+  padding-left: (1/2/3/...30)px;
+}
+...
+
+
+[mh6] {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+[ph6] {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+...
+
+
+[pv8] {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+...
+
+
+[pa28] {
+  padding: 28px;
+}
+...
+
+-------------------------- */
+
+$direction: (l left, r right, t top, b bottom);
+@for $i from 1 through 30 {
+  @each $type in m, p, v, h, a{
+    
+    @if $type == m {
+      @each $d in $direction{
+        [m#{nth($d, 1)}#{$i}] {
+          margin-#{nth($d, 2)}: #{$i}px;
+        }
+      }
+    }
+
+    @else if $type == p {
+      @each $d in $direction{
+        [p#{nth($d, 1)}#{$i}] {
+          padding-#{nth($d, 2)}: #{$i}px;
+        }
+      }
+    }
+
+    @else if $type == h {
+      [ph#{$i}] {
+        padding-left: #{$i}px;
+        padding-right: #{$i}px;
+      }
+
+      [mh#{$i}] {
+        margin-left: #{$i}px;
+        margin-right: #{$i}px;
+      }
+    }
+
+    @else if $type == v {
+      [pv#{$i}] {
+        padding-top: #{$i}px;
+        padding-bottom: #{$i}px;
+      }
+    }
+
+    @else {
+      [pa#{$i}] {
+        padding: #{$i}px;
+      }
+    }
+  }
+}

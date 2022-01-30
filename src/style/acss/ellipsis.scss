@@ -1,0 +1,14 @@
+/* 省略号
+[ellipsis1] {
+  ...
+}
+
+[ellipsis2] {
+  ...
+}
+-------------------------- */
+@for $i from 1 through 2 {
+  [ellipsis#{$i}] {
+    @include ellipsis($i);
+  }
+}

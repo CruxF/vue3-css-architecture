@@ -1,0 +1,25 @@
+/* Color */
+// 1.主题色调
+$color-primary: #FF5777;
+$color-white: #FFFFFF;
+
+// 2.文本色调
+$color-text-primary: green;
+$color-text-secondary: #FF4533;
+$color-text-tertiary: $color-white;
+$color-text-quaternary: $color-primary;
+
+// 3.盒子边框色调
+$border-color-base: #E5E5E5;
+
+// 4.盒子背景色色调
+$background-color-primary: #F1F1F1;
+$background-color-secondary: $color-white;
+$background-color-tertiary: $color-primary;
+
+
+/* Border */
+// 盒子默认边框
+$border-width-base: 1Px !default;
+$border-style-base: solid !default;
+$border-base: $border-width-base $border-style-base $border-color-base !default;
